@@ -24,7 +24,7 @@ func GetHandler(w http.ResponseWriter, r *http.Request) {
 
 func DelHandler(w http.ResponseWriter, r *http.Request) {
     key := KeyFromURL(r.URL.Path)
-    ms.PutKey(key, string(val))
+    ms.DeleteKey(key)
     w.Write([]byte("SUCCESS"))
 }
 
