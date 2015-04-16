@@ -42,7 +42,7 @@ func (s *Master) FindSuccessiveId(id uint16) uint16 {
             return ident
         }
     }
-    return ident
+    return s.Keys[0]
 }
 
 func (s *Master) ResolveKeyToNode(key string) *StoreRef {
