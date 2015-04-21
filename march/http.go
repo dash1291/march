@@ -41,6 +41,7 @@ func PutHandler(w http.ResponseWriter, r *http.Request) {
 
 func HttpHandler(w http.ResponseWriter, r *http.Request) {
     method := r.Method
+    println(fmt.Sprintf("%s %s", method, r.URL.Path))
 
     switch method {
     case "GET":
