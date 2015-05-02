@@ -6,7 +6,7 @@ import (
     "strings"
 )
 
-var ms = NewMarchStore()
+var ms *Node
 
 func KeyFromURL(URL string) string {
     pieces := strings.Split(URL, "/")
@@ -58,7 +58,9 @@ func HttpHandler(w http.ResponseWriter, r *http.Request) {
     w.(http.Flusher).Flush()
 }
 
-func Listen(port int) {
+func Listen(port int, mode string) {
+    ms = NewNode(mode)
+
     http.HandleFunc("/", HttpHandler)
     http.ListenAndServe(fmt.Sprintf(":%v", port), nil)
 }

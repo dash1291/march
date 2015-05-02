@@ -74,3 +74,15 @@ func (s *Master) AddStore(ip string) {
     s.Keys = append(s.Keys, key_hash)
     sort.Sort(Uint16Slice(s.Keys))
 }
+
+func (s* Master) GetKey(key string) string {
+    return "test"
+}
+
+func (s* Master) PutKey(key string, value string) bool {
+    return true
+}
+
+func (s* Master) DeleteKey(key string) bool {
+    return true
+}
